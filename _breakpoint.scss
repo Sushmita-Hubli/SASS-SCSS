@@ -1,0 +1,100 @@
+//writing media queries for different screens
+
+$breakpoints:(
+"xs":0,
+"sm":180px,
+"md":720px,
+"lg":960px,
+"xl":1200px,
+);
+
+@mixin xs(){ 
+@media(min-width: map-get($breakpoints,"xs"))
+{
+
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    
+@content;
+}
+}
+
+@mixin sm(){
+    @media(min-width: map-get($breakpoints,"sm"))
+    {
+    
+        /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+        
+    @content;
+    }
+    }
+
+    @mixin md(){
+        @media(min-width: map-get($breakpoints,"md"))
+        {
+        
+            /*The @content directive is a placeholder for content passed into the mixin when it's included.
+        This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+            
+        @content;
+        }
+        }
+
+        @mixin lg(){
+            @media(min-width: map-get($breakpoints,"lg"))
+            {
+            
+                /*The @content directive is a placeholder for content passed into the mixin when it's included.
+            This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+                
+            @content;
+            }
+            }
+
+            @mixin xl(){
+                @media(min-width: map-get($breakpoints,"xl"))
+                {
+                
+                    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+                This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+                    
+                @content;
+                }
+                }
+
+@mixin breakpoint($bp)
+{
+    @media (min-width:$bp)
+    {
+        @content;
+    }
+}
+
+.responsive-test
+{
+    @include xs()
+    {
+        color: red;
+    }
+    @include sm()
+    {
+        color: blue;
+    }
+    @include md()
+    {
+        color: green;
+    }
+    @include lg()
+    {
+        color: purple;
+    }
+    @include xl()
+    {
+        color: brown;
+    }
+    @include breakpoint(1400px)
+    {
+        color: pink;
+    }
+}

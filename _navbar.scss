@@ -1,0 +1,47 @@
+/*In SCSS/SASS, a placeholder is defined using the % symbol, and it allows you to create styles that can be extended into other rules. Placeholders are useful for defining reusable sets of CSS properties that won't be compiled into CSS on their own unless they're extended by another selector.*/
+//HERE %flex-layout is a placeholder
+//we can use @extend property to extend the properties of both class as well as placeholder
+
+%flex-layout
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.navbar
+{
+    //we use @extend directive to apply the styles defined in the placeholder to other selectors.
+    @extend %flex-layout;
+    padding: $base-padding $base-padding*2;
+    box-shadow: $base-box-shadow;
+
+    .site-title
+    {
+        font-size: $font-size-lg;
+    }
+
+    .container
+    {
+        display: flex;
+        justify-content: center;
+    }
+    p 
+    {
+        margin-left: 80px;
+        margin-top: 8px;
+    }
+}
+
+@each $key, $value in $colors
+{
+    .navbar-#{$key}
+    {
+        //extending the properties of navbar class
+        @extend .navbar;
+        //adding new feature
+        background-color: $value;
+    }
+}
+

@@ -1,0 +1,33 @@
+/*In this context:
+
+@import 'variables';: This import brings in your SCSS file containing variables like colors, fonts, sizes, etc. These are foundational elements used throughout other style files.
+
+@import 'lect5base';: This imports base styles, which could be general styles for HTML elements or base layout settings for your project. It might rely on the variables defined in the first import.
+
+By importing variables first, you ensure that the variables are available when lect5base is processed. This order is essential because lect5base could use the variables for setting up its styles (e.g., defining background colors, margins, or font sizes). If you reversed the order, it could cause errors or undefined variable issues.*/
+
+
+//variables and functions
+@import 'functions';
+@import 'lect4partvariables';
+
+
+
+//base and layout
+@import 'lect5base';
+@import 'breakpoint';
+@import 'grid';
+
+
+//colors
+@import 'colors';
+
+//components(btton, card, navbar)
+@import 'card';
+@import 'button';
+@import 'navbar';
+@import 'badge';
+
+//utilities (margin,padding,opacity)
+@import 'utilities';
+

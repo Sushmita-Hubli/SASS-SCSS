@@ -1,0 +1,43 @@
+//importing the partial scss file which is lect4partvariables.scss in our lect4.scss
+
+/*
+In SASS/SCSS, partials and @import are used to split your stylesheets into smaller, more manageable files and then combine them into one CSS file.
+
+Partials
+A partial is a small SCSS file that contains a portion of your CSS. It helps to modularize your code. By convention, partial files are named with an underscore (_) at the beginning, like _header.scss or _buttons.scss. This tells SASS not to compile them into a standalone CSS file.
+@import
+The @import directive is used to bring partials together into one main SCSS file. When you import a partial, you omit the underscore and the file extension.
+*/
+@import 'lect4partvariables';
+h1{
+    color: $primary-color;
+    margin-bottom: $base-margin;
+    
+}
+
+a{
+    color: $info-color;
+    text-decoration: none;
+}
+button
+{
+    color: white;
+    background-color: $error-color;
+    border: 0;
+    border-radius: $base-border-radius;
+    padding: $base-padding;
+    }
+.error
+{
+    color: $error-color;
+    border-color: $error-color;
+    border-style: solid;
+    border-width:$base-border-thickness;
+
+}
+.notification
+{
+    color: $info-color;
+    border-color: $info-color;
+    border-style: solid;
+}

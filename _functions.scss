@@ -1,0 +1,17 @@
+@function light-comp($color)
+{
+    $complement: complement($color);
+    $light-complement:lighten($complement,30%);
+    @return $light-complement;
+
+/*$complement: complement($color);
+Here, the complement() function is applied to the $color argument. The complement() function calculates the complementary color of the given color.
+For example, if $color is blue, the complement might be orange. If $color is red, the complement would be green.
+The resulting complementary color is stored in the variable $complement.
+3. $light-complement: lighten($complement);
+This line uses the lighten() function to make the $complement color lighter. By default, it lightens the color by 30%.
+The result is assigned to the variable $light-complement.
+4. @return $light-complement;
+The function returns the lightened complementary color. This means that whenever the function light-comp is called, it will output a lightened version of the complementary color of the input.*/
+
+}

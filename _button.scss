@@ -1,0 +1,63 @@
+/*
+A mixin in Sass/SCSS is a reusable block of CSS that you can define once and use in multiple places throughout your stylesheet. Mixins allow you to avoid repetitive code and make your styles more maintainable and scalable. You can also pass arguments to mixins, making them even more flexible.
+*/
+
+
+@mixin btn($bg-color: pink)  //so pink here is default value . if user doesnt pass any value in parenthesis while calling mixin , the background color will be set to pink
+{
+    text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        border:0;
+        padding:$base-padding $base-padding*2;
+        border-radius: $base-border-radius;
+        background-color: $bg-color;
+}
+
+.btn
+{
+    @include btn();  /*This is the correct way to include a mixin, especially if the mixin has no parameters or you are calling it without any arguments. The parentheses () are necessary even if the mixin doesn’t take any parameters.*/
+}
+
+
+@each $key,$value in $colors
+{
+    .btn-#{$key}
+    {
+        //use of mixin
+        @include btn($value);
+        &:hover
+        {
+            background-color: lighten($value,35); /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+        }
+       
+        
+    }
+    .btn-outlined-#{$key}
+    {
+        //use of mixin
+        @include btn(white);
+        border: $base-border-thickness solid $value;
+        &:hover{
+            background-color:$value;
+        }
+
+    }
+
+    .btn-complement-#{$key}
+    {
+        @include btn($value);
+        color:light-comp($value);
+
+        &:hover{
+            color: $value;
+            background-color: light-comp($value);
+        }
+
+
+
+
+    }
+}
+
+

@@ -1,0 +1,10 @@
+/*We cannot include scss file in our link tag to link html with this css coz browser doesnt understand scss. so the generated css file is required to be linked with the html*/
+body
+{
+    background-color: black;
+}
+h1{
+    a{
+        color:red;
+    }
+}

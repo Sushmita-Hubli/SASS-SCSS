@@ -1,0 +1,73 @@
+@use 'sass:math';
+
+
+/*
+In the context of SASS/SCSS (or even CSS), utilities refer to small, reusable snippets of code that help apply specific styles quickly and efficiently. These utility classes or functions can simplify the development process by providing pre-defined behaviors or properties that can be easily applied to HTML elements.*/
+$utilities:(
+    "padding":(
+        "prefix":"p",
+        "values":(
+            "0":0,
+            "1":$base-padding,
+             "2":$base-padding*2,
+             "3":$base-padding*4,
+             "4":$base-padding*6
+        )
+    ),
+
+    "padding-left":(
+        "prefix":"pl",
+        "values":(
+            "0":0,
+            "1":$base-padding,
+             "2":$base-padding*2,
+             "3":$base-padding*4,
+             "4":$base-padding*30
+        )
+    ),
+
+    "margin-left":(
+        "prefix":"ml",
+        "values":(
+            "0":0,
+            "1":$base-margin,
+            "2":$base-margin*2,
+            "3":$base-margin*4,
+            "4":$base-margin*30
+
+        )
+    ),
+
+    "margin-top":(
+        "prefix":"mt",
+        "values":(
+            "0":0,
+            "1":$base-margin,
+            "2":$base-margin*2,
+            "3":$base-margin*4,
+            "4":$base-margin*30
+        )
+    )
+);
+
+@each $property , $map in $utilities{
+    $prefix: map-get($map,"prefix");
+    $values: map-get($map, "values" );
+
+
+    @each $k,$v in $values
+    {
+        @if($k=="default"){
+            .#{$prefix}{
+                #{property}:$v;
+            }
+        }
+        @else
+        {
+            .#{$prefix}-#{$k}
+            {
+                #{$property}:$v;
+            }
+        }
+    }
+}

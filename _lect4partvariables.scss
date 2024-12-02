@@ -1,0 +1,56 @@
+$primary-color: greenyellow !default;  //default color of $primary variable will be greenyellow . but when we import our scss in new project and try to change the variable value of primary variable, the new value dtored inside $primary variable will be reflected on the screen. But we have to modify/change the variable value before importing the scss file in our new folder . ex $primary=red; @import 'lect4partvariables.scss'
+$secondary-color:beige;
+$error-color:red;
+$info-color:yellow;
+
+
+//color-palette
+//map
+/*In Sass/SCSS, a map is a data structure similar to JavaScript objects or Python dictionaries. It stores key-value pairs, allowing you to organize and access values by their associated keys. Maps are helpful when you need to group related data, such as colors, fonts, or styles, in a structured way.*/
+$colors:(
+    "primary":$primary-color,
+    "secondary":$secondary-color,
+    "error":$error-color,
+    "info":$info-color,
+    "blue":blue,
+    "red":red,
+    "white":white,
+    "black":black
+    
+);
+/*To access a value from a map, you use the map-get() function. This function takes two arguments: the map name and the key.*/
+@debug map-get($colors,"red");
+/*
+map-merge($colors, (success: #27ae60));
+map-get($map, $key): Retrieves the value for a given key.
+map-keys($map): Returns a list of all keys in the map.
+map-values($map): Returns a list of all values in the map.
+map-has-key($map, $key): Checks if the map contains a key.
+map-remove($map, $key): Removes a key-value pair from the map.
+*/
+
+
+.test-btn
+{
+    background-color: map-get($colors,"red");
+}
+
+//spacing
+$base-padding:0.75rem;
+$base-margin:0.75rem;
+
+//borders
+$base-border-thickness:1px;
+$base-border-radius:20px;
+
+//box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+//font-sizes
+$base-font-size:1rem;
+//Using Math
+$font-size-sm:$base-font-size*0.75; //font size small
+$font-size-lg:$base-font-size*1.5;//font size large
+$font-size-xl:$base-font-size*2;//extra large
+$font-size-xxl:$base-font-size*3;// extra extra large
+

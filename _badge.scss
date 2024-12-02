@@ -1,0 +1,23 @@
+@use 'sass:math';
+@mixin badge($bg-color: $secondary-color)//here secondary color is a default color
+{
+    border-radius: $base-border-radius*4;
+    background-color: $bg-color;
+    padding: math.div($base-padding,4) math.div($base-padding,4);
+    font-size: $font-size-xl;
+    font-weight: normal;
+}
+
+.badge   //if no key is passed then this will reflect
+{
+    @include badge();
+
+}
+
+@each $key,$value in $colors
+{
+    .badge-#{$key}
+    {
+        @include badge($value);//including mixin
+    }
+}

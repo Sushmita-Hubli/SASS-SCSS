@@ -1,0 +1,41 @@
+/*
+Nesting in Sass/SCSS allows you to write CSS in a way that reflects the HTML structure more closely. Instead of repeating selectors, you can nest rules inside each other, making the styles cleaner and more readable.*/
+@use 'sass:math';
+
+.card
+{
+    display: block;
+    padding: $base-padding;
+    border:$base-border-thickness solid #ddd;
+    box-shadow: $base-box-shadow;
+    background-color: $info-color;
+ //   border-radius: $base-border-radius/5; //this line gives error coz this type of division is not allowed in sass/scss to divide we've to write line no 3 and the following code
+ border-radius: math.div($base-border-radius,5);
+
+
+    //nesting
+    .card-title{
+        font-size: $font-size-xl;
+        padding-bottom: $base-padding;
+        font-weight: bold;
+    }
+
+    .card-body
+    {
+       font-size: $base-font-size;
+
+       a{
+        text-decoration: underline;
+        
+    }
+    }
+
+}
+
+
+//used to see the output in terminal
+@debug 'hello'; //here hello is the output
+@debug math.div(10,3);
+@debug math.floor(2.6);
+@debug 'sushmiat';
+
