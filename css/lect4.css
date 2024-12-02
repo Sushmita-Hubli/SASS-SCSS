@@ -1,0 +1,52 @@
+/*
+In SASS/SCSS, partials and @import are used to split your stylesheets into smaller, more manageable files and then combine them into one CSS file.
+
+Partials
+A partial is a small SCSS file that contains a portion of your CSS. It helps to modularize your code. By convention, partial files are named with an underscore (_) at the beginning, like _header.scss or _buttons.scss. This tells SASS not to compile them into a standalone CSS file.
+@import
+The @import directive is used to bring partials together into one main SCSS file. When you import a partial, you omit the underscore and the file extension.
+*/
+/*In Sass/SCSS, a map is a data structure similar to JavaScript objects or Python dictionaries. It stores key-value pairs, allowing you to organize and access values by their associated keys. Maps are helpful when you need to group related data, such as colors, fonts, or styles, in a structured way.*/
+/*To access a value from a map, you use the map-get() function. This function takes two arguments: the map name and the key.*/
+/*
+map-merge($colors, (success: #27ae60));
+map-get($map, $key): Retrieves the value for a given key.
+map-keys($map): Returns a list of all keys in the map.
+map-values($map): Returns a list of all values in the map.
+map-has-key($map, $key): Checks if the map contains a key.
+map-remove($map, $key): Removes a key-value pair from the map.
+*/
+.test-btn {
+  background-color: red;
+}
+
+h1 {
+  color: greenyellow;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  background-color: red;
+  border: 0;
+  border-radius: 20px;
+  padding: 0.75rem;
+}
+
+.error {
+  color: red;
+  border-color: red;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.notification {
+  color: yellow;
+  border-color: yellow;
+  border-style: solid;
+}

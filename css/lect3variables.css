@@ -1,0 +1,31 @@
+/*In SCSS/SASS, variables allow you to store values (such as colors, fonts, or sizes) and reuse them throughout your stylesheets. This makes your CSS more maintainable and flexible, as you can update the value in one place, and it will automatically change everywhere it's used. Variables in SCSS are declared with a $ symbol*/
+h1 {
+  color: greenyellow;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  background-color: red;
+  border: 0;
+  border-radius: 20px;
+  padding: 0.75rem;
+}
+
+.error {
+  color: red;
+  border-color: red;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.notification {
+  color: yellow;
+  border-color: yellow;
+  border-style: solid;
+}

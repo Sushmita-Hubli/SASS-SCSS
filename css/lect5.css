@@ -1,0 +1,2472 @@
+@charset "UTF-8";
+/*In this context:
+
+@import 'variables';: This import brings in your SCSS file containing variables like colors, fonts, sizes, etc. These are foundational elements used throughout other style files.
+
+@import 'lect5base';: This imports base styles, which could be general styles for HTML elements or base layout settings for your project. It might rely on the variables defined in the first import.
+
+By importing variables first, you ensure that the variables are available when lect5base is processed. This order is essential because lect5base could use the variables for setting up its styles (e.g., defining background colors, margins, or font sizes). If you reversed the order, it could cause errors or undefined variable issues.*/
+/*In Sass/SCSS, a map is a data structure similar to JavaScript objects or Python dictionaries. It stores key-value pairs, allowing you to organize and access values by their associated keys. Maps are helpful when you need to group related data, such as colors, fonts, or styles, in a structured way.*/
+/*To access a value from a map, you use the map-get() function. This function takes two arguments: the map name and the key.*/
+/*
+map-merge($colors, (success: #27ae60));
+map-get($map, $key): Retrieves the value for a given key.
+map-keys($map): Returns a list of all keys in the map.
+map-values($map): Returns a list of all values in the map.
+map-has-key($map, $key): Checks if the map contains a key.
+map-remove($map, $key): Removes a key-value pair from the map.
+*/
+.test-btn {
+  background-color: red;
+}
+
+* {
+  color: inherit;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted pink;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (min-width: 0) {
+  .responsive-test {
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    color: red;
+  }
+}
+@media (min-width: 180px) {
+  .responsive-test {
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    color: blue;
+  }
+}
+@media (min-width: 720px) {
+  .responsive-test {
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    color: green;
+  }
+}
+@media (min-width: 960px) {
+  .responsive-test {
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    color: purple;
+  }
+}
+@media (min-width: 1200px) {
+  .responsive-test {
+    /*The @content directive is a placeholder for content passed into the mixin when it's included.
+    This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+    color: brown;
+  }
+}
+@media (min-width: 1400px) {
+  .responsive-test {
+    color: pink;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media (min-width: 0) {
+  /*The @content directive is a placeholder for content passed into the mixin when it's included.
+  This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+  .col-1-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-xs {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 180px) {
+  /*The @content directive is a placeholder for content passed into the mixin when it's included.
+  This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+  .col-1-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-sm {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 720px) {
+  /*The @content directive is a placeholder for content passed into the mixin when it's included.
+  This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+  .col-1-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-md {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 960px) {
+  /*The @content directive is a placeholder for content passed into the mixin when it's included.
+  This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+  .col-1-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-lg {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  /*The @content directive is a placeholder for content passed into the mixin when it's included.
+  This allows you to inject specific CSS rules inside the @media query. Whenever you include the xs() mixin somewhere in your styles, the content you write at that point will replace @content inside the media query.*/
+  .col-1-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 8.3333333333%;
+  }
+  .col-2-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 16.6666666667%;
+  }
+  .col-3-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 25%;
+  }
+  .col-4-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 33.3333333333%;
+  }
+  .col-5-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 41.6666666667%;
+  }
+  .col-6-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 50%;
+  }
+  .col-7-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 58.3333333333%;
+  }
+  .col-8-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 66.6666666667%;
+  }
+  .col-9-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 75%;
+  }
+  .col-10-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 83.3333333333%;
+  }
+  .col-11-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 91.6666666667%;
+  }
+  .col-12-xl {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: 100%;
+  }
+}
+.gap-0 > * {
+  padding: 0;
+}
+
+.gap-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gap-1 > * {
+  padding: 10px;
+}
+
+.gap-1 {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.gap-2 > * {
+  padding: 20px;
+}
+
+.gap-2 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.gap-3 > * {
+  padding: 30px;
+}
+
+.gap-3 {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-primary {
+  color: greenyellow;
+}
+
+.bg-primary {
+  background-color: greenyellow;
+}
+
+.text-hover-primary:hover {
+  color: greenyellow;
+}
+
+.text-primary-light-1 {
+  color: #b5ff44;
+}
+
+.text-hover-primary-light-1:hover {
+  color: #b5ff44;
+}
+
+.bg-primary-light-1 {
+  background-color: #b5ff44;
+}
+
+.text-primary-light-2 {
+  color: #bdff59;
+}
+
+.text-hover-primary-light-2:hover {
+  color: #bdff59;
+}
+
+.bg-primary-light-2 {
+  background-color: #bdff59;
+}
+
+.text-primary-light-3 {
+  color: #c6ff6d;
+}
+
+.text-hover-primary-light-3:hover {
+  color: #c6ff6d;
+}
+
+.bg-primary-light-3 {
+  background-color: #c6ff6d;
+}
+
+.text-primary-light-4 {
+  color: #ceff82;
+}
+
+.text-hover-primary-light-4:hover {
+  color: #ceff82;
+}
+
+.bg-primary-light-4 {
+  background-color: #ceff82;
+}
+
+.text-primary-light-5 {
+  color: #d6ff97;
+}
+
+.text-hover-primary-light-5:hover {
+  color: #d6ff97;
+}
+
+.bg-primary-light-5 {
+  background-color: #d6ff97;
+}
+
+.text-primary-light-6 {
+  color: #deffac;
+}
+
+.text-hover-primary-light-6:hover {
+  color: #deffac;
+}
+
+.bg-primary-light-6 {
+  background-color: #deffac;
+}
+
+.text-primary-light-7 {
+  color: #e6ffc1;
+}
+
+.text-hover-primary-light-7:hover {
+  color: #e6ffc1;
+}
+
+.bg-primary-light-7 {
+  background-color: #e6ffc1;
+}
+
+.text-primary-light-8 {
+  color: #efffd5;
+}
+
+.text-hover-primary-light-8:hover {
+  color: #efffd5;
+}
+
+.bg-primary-light-8 {
+  background-color: #efffd5;
+}
+
+.text-primary-light-9 {
+  color: #f7ffea;
+}
+
+.text-hover-primary-light-9:hover {
+  color: #f7ffea;
+}
+
+.bg-primary-light-9 {
+  background-color: #f7ffea;
+}
+
+.text-primary-dark-1 {
+  color: #9ce62a;
+}
+
+.text-hover-primary-dark-1:hover {
+  color: #9ce62a;
+}
+
+.bg-primary-dark-1 {
+  background-color: #9ce62a;
+}
+
+.text-primary-dark-2 {
+  color: #8acc26;
+}
+
+.text-hover-primary-dark-2:hover {
+  color: #8acc26;
+}
+
+.bg-primary-dark-2 {
+  background-color: #8acc26;
+}
+
+.text-primary-dark-3 {
+  color: #79b321;
+}
+
+.text-hover-primary-dark-3:hover {
+  color: #79b321;
+}
+
+.bg-primary-dark-3 {
+  background-color: #79b321;
+}
+
+.text-primary-dark-4 {
+  color: #68991c;
+}
+
+.text-hover-primary-dark-4:hover {
+  color: #68991c;
+}
+
+.bg-primary-dark-4 {
+  background-color: #68991c;
+}
+
+.text-primary-dark-5 {
+  color: #578018;
+}
+
+.text-hover-primary-dark-5:hover {
+  color: #578018;
+}
+
+.bg-primary-dark-5 {
+  background-color: #578018;
+}
+
+.text-primary-dark-6 {
+  color: #456613;
+}
+
+.text-hover-primary-dark-6:hover {
+  color: #456613;
+}
+
+.bg-primary-dark-6 {
+  background-color: #456613;
+}
+
+.text-primary-dark-7 {
+  color: #344d0e;
+}
+
+.text-hover-primary-dark-7:hover {
+  color: #344d0e;
+}
+
+.bg-primary-dark-7 {
+  background-color: #344d0e;
+}
+
+.text-primary-dark-8 {
+  color: #233309;
+}
+
+.text-hover-primary-dark-8:hover {
+  color: #233309;
+}
+
+.bg-primary-dark-8 {
+  background-color: #233309;
+}
+
+.text-primary-dark-9 {
+  color: #111a05;
+}
+
+.text-hover-primary-dark-9:hover {
+  color: #111a05;
+}
+
+.bg-primary-dark-9 {
+  background-color: #111a05;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-secondary {
+  color: beige;
+}
+
+.bg-secondary {
+  background-color: beige;
+}
+
+.text-hover-secondary:hover {
+  color: beige;
+}
+
+.text-secondary-light-1 {
+  color: #f6f6e0;
+}
+
+.text-hover-secondary-light-1:hover {
+  color: #f6f6e0;
+}
+
+.bg-secondary-light-1 {
+  background-color: #f6f6e0;
+}
+
+.text-secondary-light-2 {
+  color: #f7f7e3;
+}
+
+.text-hover-secondary-light-2:hover {
+  color: #f7f7e3;
+}
+
+.bg-secondary-light-2 {
+  background-color: #f7f7e3;
+}
+
+.text-secondary-light-3 {
+  color: #f8f8e7;
+}
+
+.text-hover-secondary-light-3:hover {
+  color: #f8f8e7;
+}
+
+.bg-secondary-light-3 {
+  background-color: #f8f8e7;
+}
+
+.text-secondary-light-4 {
+  color: #f9f9ea;
+}
+
+.text-hover-secondary-light-4:hover {
+  color: #f9f9ea;
+}
+
+.bg-secondary-light-4 {
+  background-color: #f9f9ea;
+}
+
+.text-secondary-light-5 {
+  color: #fafaee;
+}
+
+.text-hover-secondary-light-5:hover {
+  color: #fafaee;
+}
+
+.bg-secondary-light-5 {
+  background-color: #fafaee;
+}
+
+.text-secondary-light-6 {
+  color: #fbfbf1;
+}
+
+.text-hover-secondary-light-6:hover {
+  color: #fbfbf1;
+}
+
+.bg-secondary-light-6 {
+  background-color: #fbfbf1;
+}
+
+.text-secondary-light-7 {
+  color: #fcfcf5;
+}
+
+.text-hover-secondary-light-7:hover {
+  color: #fcfcf5;
+}
+
+.bg-secondary-light-7 {
+  background-color: #fcfcf5;
+}
+
+.text-secondary-light-8 {
+  color: #fdfdf8;
+}
+
+.text-hover-secondary-light-8:hover {
+  color: #fdfdf8;
+}
+
+.bg-secondary-light-8 {
+  background-color: #fdfdf8;
+}
+
+.text-secondary-light-9 {
+  color: #fefefc;
+}
+
+.text-hover-secondary-light-9:hover {
+  color: #fefefc;
+}
+
+.bg-secondary-light-9 {
+  background-color: #fefefc;
+}
+
+.text-secondary-dark-1 {
+  color: #ddddc6;
+}
+
+.text-hover-secondary-dark-1:hover {
+  color: #ddddc6;
+}
+
+.bg-secondary-dark-1 {
+  background-color: #ddddc6;
+}
+
+.text-secondary-dark-2 {
+  color: #c4c4b0;
+}
+
+.text-hover-secondary-dark-2:hover {
+  color: #c4c4b0;
+}
+
+.bg-secondary-dark-2 {
+  background-color: #c4c4b0;
+}
+
+.text-secondary-dark-3 {
+  color: #acac9a;
+}
+
+.text-hover-secondary-dark-3:hover {
+  color: #acac9a;
+}
+
+.bg-secondary-dark-3 {
+  background-color: #acac9a;
+}
+
+.text-secondary-dark-4 {
+  color: #939384;
+}
+
+.text-hover-secondary-dark-4:hover {
+  color: #939384;
+}
+
+.bg-secondary-dark-4 {
+  background-color: #939384;
+}
+
+.text-secondary-dark-5 {
+  color: #7b7b6e;
+}
+
+.text-hover-secondary-dark-5:hover {
+  color: #7b7b6e;
+}
+
+.bg-secondary-dark-5 {
+  background-color: #7b7b6e;
+}
+
+.text-secondary-dark-6 {
+  color: #626258;
+}
+
+.text-hover-secondary-dark-6:hover {
+  color: #626258;
+}
+
+.bg-secondary-dark-6 {
+  background-color: #626258;
+}
+
+.text-secondary-dark-7 {
+  color: #4a4a42;
+}
+
+.text-hover-secondary-dark-7:hover {
+  color: #4a4a42;
+}
+
+.bg-secondary-dark-7 {
+  background-color: #4a4a42;
+}
+
+.text-secondary-dark-8 {
+  color: #31312c;
+}
+
+.text-hover-secondary-dark-8:hover {
+  color: #31312c;
+}
+
+.bg-secondary-dark-8 {
+  background-color: #31312c;
+}
+
+.text-secondary-dark-9 {
+  color: #191916;
+}
+
+.text-hover-secondary-dark-9:hover {
+  color: #191916;
+}
+
+.bg-secondary-dark-9 {
+  background-color: #191916;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-error {
+  color: red;
+}
+
+.bg-error {
+  background-color: red;
+}
+
+.text-hover-error:hover {
+  color: red;
+}
+
+.text-error-light-1 {
+  color: #ff1a1a;
+}
+
+.text-hover-error-light-1:hover {
+  color: #ff1a1a;
+}
+
+.bg-error-light-1 {
+  background-color: #ff1a1a;
+}
+
+.text-error-light-2 {
+  color: #ff3333;
+}
+
+.text-hover-error-light-2:hover {
+  color: #ff3333;
+}
+
+.bg-error-light-2 {
+  background-color: #ff3333;
+}
+
+.text-error-light-3 {
+  color: #ff4d4d;
+}
+
+.text-hover-error-light-3:hover {
+  color: #ff4d4d;
+}
+
+.bg-error-light-3 {
+  background-color: #ff4d4d;
+}
+
+.text-error-light-4 {
+  color: #ff6666;
+}
+
+.text-hover-error-light-4:hover {
+  color: #ff6666;
+}
+
+.bg-error-light-4 {
+  background-color: #ff6666;
+}
+
+.text-error-light-5 {
+  color: #ff8080;
+}
+
+.text-hover-error-light-5:hover {
+  color: #ff8080;
+}
+
+.bg-error-light-5 {
+  background-color: #ff8080;
+}
+
+.text-error-light-6 {
+  color: #ff9999;
+}
+
+.text-hover-error-light-6:hover {
+  color: #ff9999;
+}
+
+.bg-error-light-6 {
+  background-color: #ff9999;
+}
+
+.text-error-light-7 {
+  color: #ffb3b3;
+}
+
+.text-hover-error-light-7:hover {
+  color: #ffb3b3;
+}
+
+.bg-error-light-7 {
+  background-color: #ffb3b3;
+}
+
+.text-error-light-8 {
+  color: #ffcccc;
+}
+
+.text-hover-error-light-8:hover {
+  color: #ffcccc;
+}
+
+.bg-error-light-8 {
+  background-color: #ffcccc;
+}
+
+.text-error-light-9 {
+  color: #ffe6e6;
+}
+
+.text-hover-error-light-9:hover {
+  color: #ffe6e6;
+}
+
+.bg-error-light-9 {
+  background-color: #ffe6e6;
+}
+
+.text-error-dark-1 {
+  color: #e60000;
+}
+
+.text-hover-error-dark-1:hover {
+  color: #e60000;
+}
+
+.bg-error-dark-1 {
+  background-color: #e60000;
+}
+
+.text-error-dark-2 {
+  color: #cc0000;
+}
+
+.text-hover-error-dark-2:hover {
+  color: #cc0000;
+}
+
+.bg-error-dark-2 {
+  background-color: #cc0000;
+}
+
+.text-error-dark-3 {
+  color: #b30000;
+}
+
+.text-hover-error-dark-3:hover {
+  color: #b30000;
+}
+
+.bg-error-dark-3 {
+  background-color: #b30000;
+}
+
+.text-error-dark-4 {
+  color: #990000;
+}
+
+.text-hover-error-dark-4:hover {
+  color: #990000;
+}
+
+.bg-error-dark-4 {
+  background-color: #990000;
+}
+
+.text-error-dark-5 {
+  color: maroon;
+}
+
+.text-hover-error-dark-5:hover {
+  color: maroon;
+}
+
+.bg-error-dark-5 {
+  background-color: maroon;
+}
+
+.text-error-dark-6 {
+  color: #660000;
+}
+
+.text-hover-error-dark-6:hover {
+  color: #660000;
+}
+
+.bg-error-dark-6 {
+  background-color: #660000;
+}
+
+.text-error-dark-7 {
+  color: #4d0000;
+}
+
+.text-hover-error-dark-7:hover {
+  color: #4d0000;
+}
+
+.bg-error-dark-7 {
+  background-color: #4d0000;
+}
+
+.text-error-dark-8 {
+  color: #330000;
+}
+
+.text-hover-error-dark-8:hover {
+  color: #330000;
+}
+
+.bg-error-dark-8 {
+  background-color: #330000;
+}
+
+.text-error-dark-9 {
+  color: #1a0000;
+}
+
+.text-hover-error-dark-9:hover {
+  color: #1a0000;
+}
+
+.bg-error-dark-9 {
+  background-color: #1a0000;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-info {
+  color: yellow;
+}
+
+.bg-info {
+  background-color: yellow;
+}
+
+.text-hover-info:hover {
+  color: yellow;
+}
+
+.text-info-light-1 {
+  color: #ffff1a;
+}
+
+.text-hover-info-light-1:hover {
+  color: #ffff1a;
+}
+
+.bg-info-light-1 {
+  background-color: #ffff1a;
+}
+
+.text-info-light-2 {
+  color: #ffff33;
+}
+
+.text-hover-info-light-2:hover {
+  color: #ffff33;
+}
+
+.bg-info-light-2 {
+  background-color: #ffff33;
+}
+
+.text-info-light-3 {
+  color: #ffff4d;
+}
+
+.text-hover-info-light-3:hover {
+  color: #ffff4d;
+}
+
+.bg-info-light-3 {
+  background-color: #ffff4d;
+}
+
+.text-info-light-4 {
+  color: #ffff66;
+}
+
+.text-hover-info-light-4:hover {
+  color: #ffff66;
+}
+
+.bg-info-light-4 {
+  background-color: #ffff66;
+}
+
+.text-info-light-5 {
+  color: #ffff80;
+}
+
+.text-hover-info-light-5:hover {
+  color: #ffff80;
+}
+
+.bg-info-light-5 {
+  background-color: #ffff80;
+}
+
+.text-info-light-6 {
+  color: #ffff99;
+}
+
+.text-hover-info-light-6:hover {
+  color: #ffff99;
+}
+
+.bg-info-light-6 {
+  background-color: #ffff99;
+}
+
+.text-info-light-7 {
+  color: #ffffb3;
+}
+
+.text-hover-info-light-7:hover {
+  color: #ffffb3;
+}
+
+.bg-info-light-7 {
+  background-color: #ffffb3;
+}
+
+.text-info-light-8 {
+  color: #ffffcc;
+}
+
+.text-hover-info-light-8:hover {
+  color: #ffffcc;
+}
+
+.bg-info-light-8 {
+  background-color: #ffffcc;
+}
+
+.text-info-light-9 {
+  color: #ffffe6;
+}
+
+.text-hover-info-light-9:hover {
+  color: #ffffe6;
+}
+
+.bg-info-light-9 {
+  background-color: #ffffe6;
+}
+
+.text-info-dark-1 {
+  color: #e6e600;
+}
+
+.text-hover-info-dark-1:hover {
+  color: #e6e600;
+}
+
+.bg-info-dark-1 {
+  background-color: #e6e600;
+}
+
+.text-info-dark-2 {
+  color: #cccc00;
+}
+
+.text-hover-info-dark-2:hover {
+  color: #cccc00;
+}
+
+.bg-info-dark-2 {
+  background-color: #cccc00;
+}
+
+.text-info-dark-3 {
+  color: #b3b300;
+}
+
+.text-hover-info-dark-3:hover {
+  color: #b3b300;
+}
+
+.bg-info-dark-3 {
+  background-color: #b3b300;
+}
+
+.text-info-dark-4 {
+  color: #999900;
+}
+
+.text-hover-info-dark-4:hover {
+  color: #999900;
+}
+
+.bg-info-dark-4 {
+  background-color: #999900;
+}
+
+.text-info-dark-5 {
+  color: olive;
+}
+
+.text-hover-info-dark-5:hover {
+  color: olive;
+}
+
+.bg-info-dark-5 {
+  background-color: olive;
+}
+
+.text-info-dark-6 {
+  color: #666600;
+}
+
+.text-hover-info-dark-6:hover {
+  color: #666600;
+}
+
+.bg-info-dark-6 {
+  background-color: #666600;
+}
+
+.text-info-dark-7 {
+  color: #4d4d00;
+}
+
+.text-hover-info-dark-7:hover {
+  color: #4d4d00;
+}
+
+.bg-info-dark-7 {
+  background-color: #4d4d00;
+}
+
+.text-info-dark-8 {
+  color: #333300;
+}
+
+.text-hover-info-dark-8:hover {
+  color: #333300;
+}
+
+.bg-info-dark-8 {
+  background-color: #333300;
+}
+
+.text-info-dark-9 {
+  color: #1a1a00;
+}
+
+.text-hover-info-dark-9:hover {
+  color: #1a1a00;
+}
+
+.bg-info-dark-9 {
+  background-color: #1a1a00;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-blue {
+  color: blue;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.text-hover-blue:hover {
+  color: blue;
+}
+
+.text-blue-light-1 {
+  color: #1a1aff;
+}
+
+.text-hover-blue-light-1:hover {
+  color: #1a1aff;
+}
+
+.bg-blue-light-1 {
+  background-color: #1a1aff;
+}
+
+.text-blue-light-2 {
+  color: #3333ff;
+}
+
+.text-hover-blue-light-2:hover {
+  color: #3333ff;
+}
+
+.bg-blue-light-2 {
+  background-color: #3333ff;
+}
+
+.text-blue-light-3 {
+  color: #4d4dff;
+}
+
+.text-hover-blue-light-3:hover {
+  color: #4d4dff;
+}
+
+.bg-blue-light-3 {
+  background-color: #4d4dff;
+}
+
+.text-blue-light-4 {
+  color: #6666ff;
+}
+
+.text-hover-blue-light-4:hover {
+  color: #6666ff;
+}
+
+.bg-blue-light-4 {
+  background-color: #6666ff;
+}
+
+.text-blue-light-5 {
+  color: #8080ff;
+}
+
+.text-hover-blue-light-5:hover {
+  color: #8080ff;
+}
+
+.bg-blue-light-5 {
+  background-color: #8080ff;
+}
+
+.text-blue-light-6 {
+  color: #9999ff;
+}
+
+.text-hover-blue-light-6:hover {
+  color: #9999ff;
+}
+
+.bg-blue-light-6 {
+  background-color: #9999ff;
+}
+
+.text-blue-light-7 {
+  color: #b3b3ff;
+}
+
+.text-hover-blue-light-7:hover {
+  color: #b3b3ff;
+}
+
+.bg-blue-light-7 {
+  background-color: #b3b3ff;
+}
+
+.text-blue-light-8 {
+  color: #ccccff;
+}
+
+.text-hover-blue-light-8:hover {
+  color: #ccccff;
+}
+
+.bg-blue-light-8 {
+  background-color: #ccccff;
+}
+
+.text-blue-light-9 {
+  color: #e6e6ff;
+}
+
+.text-hover-blue-light-9:hover {
+  color: #e6e6ff;
+}
+
+.bg-blue-light-9 {
+  background-color: #e6e6ff;
+}
+
+.text-blue-dark-1 {
+  color: #0000e6;
+}
+
+.text-hover-blue-dark-1:hover {
+  color: #0000e6;
+}
+
+.bg-blue-dark-1 {
+  background-color: #0000e6;
+}
+
+.text-blue-dark-2 {
+  color: #0000cc;
+}
+
+.text-hover-blue-dark-2:hover {
+  color: #0000cc;
+}
+
+.bg-blue-dark-2 {
+  background-color: #0000cc;
+}
+
+.text-blue-dark-3 {
+  color: #0000b3;
+}
+
+.text-hover-blue-dark-3:hover {
+  color: #0000b3;
+}
+
+.bg-blue-dark-3 {
+  background-color: #0000b3;
+}
+
+.text-blue-dark-4 {
+  color: #000099;
+}
+
+.text-hover-blue-dark-4:hover {
+  color: #000099;
+}
+
+.bg-blue-dark-4 {
+  background-color: #000099;
+}
+
+.text-blue-dark-5 {
+  color: navy;
+}
+
+.text-hover-blue-dark-5:hover {
+  color: navy;
+}
+
+.bg-blue-dark-5 {
+  background-color: navy;
+}
+
+.text-blue-dark-6 {
+  color: #000066;
+}
+
+.text-hover-blue-dark-6:hover {
+  color: #000066;
+}
+
+.bg-blue-dark-6 {
+  background-color: #000066;
+}
+
+.text-blue-dark-7 {
+  color: #00004d;
+}
+
+.text-hover-blue-dark-7:hover {
+  color: #00004d;
+}
+
+.bg-blue-dark-7 {
+  background-color: #00004d;
+}
+
+.text-blue-dark-8 {
+  color: #000033;
+}
+
+.text-hover-blue-dark-8:hover {
+  color: #000033;
+}
+
+.bg-blue-dark-8 {
+  background-color: #000033;
+}
+
+.text-blue-dark-9 {
+  color: #00001a;
+}
+
+.text-hover-blue-dark-9:hover {
+  color: #00001a;
+}
+
+.bg-blue-dark-9 {
+  background-color: #00001a;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-red {
+  color: red;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.text-hover-red:hover {
+  color: red;
+}
+
+.text-red-light-1 {
+  color: #ff1a1a;
+}
+
+.text-hover-red-light-1:hover {
+  color: #ff1a1a;
+}
+
+.bg-red-light-1 {
+  background-color: #ff1a1a;
+}
+
+.text-red-light-2 {
+  color: #ff3333;
+}
+
+.text-hover-red-light-2:hover {
+  color: #ff3333;
+}
+
+.bg-red-light-2 {
+  background-color: #ff3333;
+}
+
+.text-red-light-3 {
+  color: #ff4d4d;
+}
+
+.text-hover-red-light-3:hover {
+  color: #ff4d4d;
+}
+
+.bg-red-light-3 {
+  background-color: #ff4d4d;
+}
+
+.text-red-light-4 {
+  color: #ff6666;
+}
+
+.text-hover-red-light-4:hover {
+  color: #ff6666;
+}
+
+.bg-red-light-4 {
+  background-color: #ff6666;
+}
+
+.text-red-light-5 {
+  color: #ff8080;
+}
+
+.text-hover-red-light-5:hover {
+  color: #ff8080;
+}
+
+.bg-red-light-5 {
+  background-color: #ff8080;
+}
+
+.text-red-light-6 {
+  color: #ff9999;
+}
+
+.text-hover-red-light-6:hover {
+  color: #ff9999;
+}
+
+.bg-red-light-6 {
+  background-color: #ff9999;
+}
+
+.text-red-light-7 {
+  color: #ffb3b3;
+}
+
+.text-hover-red-light-7:hover {
+  color: #ffb3b3;
+}
+
+.bg-red-light-7 {
+  background-color: #ffb3b3;
+}
+
+.text-red-light-8 {
+  color: #ffcccc;
+}
+
+.text-hover-red-light-8:hover {
+  color: #ffcccc;
+}
+
+.bg-red-light-8 {
+  background-color: #ffcccc;
+}
+
+.text-red-light-9 {
+  color: #ffe6e6;
+}
+
+.text-hover-red-light-9:hover {
+  color: #ffe6e6;
+}
+
+.bg-red-light-9 {
+  background-color: #ffe6e6;
+}
+
+.text-red-dark-1 {
+  color: #e60000;
+}
+
+.text-hover-red-dark-1:hover {
+  color: #e60000;
+}
+
+.bg-red-dark-1 {
+  background-color: #e60000;
+}
+
+.text-red-dark-2 {
+  color: #cc0000;
+}
+
+.text-hover-red-dark-2:hover {
+  color: #cc0000;
+}
+
+.bg-red-dark-2 {
+  background-color: #cc0000;
+}
+
+.text-red-dark-3 {
+  color: #b30000;
+}
+
+.text-hover-red-dark-3:hover {
+  color: #b30000;
+}
+
+.bg-red-dark-3 {
+  background-color: #b30000;
+}
+
+.text-red-dark-4 {
+  color: #990000;
+}
+
+.text-hover-red-dark-4:hover {
+  color: #990000;
+}
+
+.bg-red-dark-4 {
+  background-color: #990000;
+}
+
+.text-red-dark-5 {
+  color: maroon;
+}
+
+.text-hover-red-dark-5:hover {
+  color: maroon;
+}
+
+.bg-red-dark-5 {
+  background-color: maroon;
+}
+
+.text-red-dark-6 {
+  color: #660000;
+}
+
+.text-hover-red-dark-6:hover {
+  color: #660000;
+}
+
+.bg-red-dark-6 {
+  background-color: #660000;
+}
+
+.text-red-dark-7 {
+  color: #4d0000;
+}
+
+.text-hover-red-dark-7:hover {
+  color: #4d0000;
+}
+
+.bg-red-dark-7 {
+  background-color: #4d0000;
+}
+
+.text-red-dark-8 {
+  color: #330000;
+}
+
+.text-hover-red-dark-8:hover {
+  color: #330000;
+}
+
+.bg-red-dark-8 {
+  background-color: #330000;
+}
+
+.text-red-dark-9 {
+  color: #1a0000;
+}
+
+.text-hover-red-dark-9:hover {
+  color: #1a0000;
+}
+
+.bg-red-dark-9 {
+  background-color: #1a0000;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-white {
+  color: white;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-hover-white:hover {
+  color: white;
+}
+
+/*This syntax creates class names by appending the key to the prefix text-. For example, if $key is primary, it generates the class .text-primary.*/
+.text-black {
+  color: black;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.text-hover-black:hover {
+  color: black;
+}
+
+/*so since this condition is true, the css for this code will be generated in lect5.css file*/
+.then-if {
+  background-color: black;
+}
+
+/*so since this condition is false, the css for this code will not be generated in lect5.css file*/
+.then-if-2 {
+  background-color: white;
+}
+
+/*
+Nesting in Sass/SCSS allows you to write CSS in a way that reflects the HTML structure more closely. Instead of repeating selectors, you can nest rules inside each other, making the styles cleaner and more readable.*/
+.card {
+  display: block;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: yellow;
+  border-radius: 4px;
+}
+.card .card-title {
+  font-size: 2rem;
+  padding-bottom: 0.75rem;
+  font-weight: bold;
+}
+.card .card-body {
+  font-size: 1rem;
+}
+.card .card-body a {
+  text-decoration: underline;
+}
+
+/*
+A mixin in Sass/SCSS is a reusable block of CSS that you can define once and use in multiple places throughout your stylesheet. Mixins allow you to avoid repetitive code and make your styles more maintainable and scalable. You can also pass arguments to mixins, making them even more flexible.
+*/
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: pink;
+  /*This is the correct way to include a mixin, especially if the mixin has no parameters or you are calling it without any arguments. The parentheses () are necessary even if the mixin doesn’t take any parameters.*/
+}
+
+.btn-primary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: greenyellow;
+}
+.btn-primary:hover {
+  background-color: #f3ffe2; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-primary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid greenyellow;
+}
+.btn-outlined-primary:hover {
+  background-color: greenyellow;
+}
+
+.btn-complement-primary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: greenyellow;
+  color: #dec8ff;
+}
+.btn-complement-primary:hover {
+  color: greenyellow;
+  background-color: #dec8ff;
+}
+
+.btn-secondary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: beige;
+}
+.btn-secondary:hover {
+  background-color: white; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-secondary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid beige;
+}
+.btn-outlined-secondary:hover {
+  background-color: beige;
+}
+
+.btn-complement-secondary {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: beige;
+  color: white;
+}
+.btn-complement-secondary:hover {
+  color: beige;
+  background-color: white;
+}
+
+.btn-error {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: red;
+}
+.btn-error:hover {
+  background-color: #ffb3b3; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-error {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid red;
+}
+.btn-outlined-error:hover {
+  background-color: red;
+}
+
+.btn-complement-error {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: red;
+  color: #99ffff;
+}
+.btn-complement-error:hover {
+  color: red;
+  background-color: #99ffff;
+}
+
+.btn-info {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: yellow;
+}
+.btn-info:hover {
+  background-color: #ffffb3; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-info {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid yellow;
+}
+.btn-outlined-info:hover {
+  background-color: yellow;
+}
+
+.btn-complement-info {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: yellow;
+  color: #9999ff;
+}
+.btn-complement-info:hover {
+  color: yellow;
+  background-color: #9999ff;
+}
+
+.btn-blue {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: blue;
+}
+.btn-blue:hover {
+  background-color: #b3b3ff; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-blue {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid blue;
+}
+.btn-outlined-blue:hover {
+  background-color: blue;
+}
+
+.btn-complement-blue {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: blue;
+  color: #ffff99;
+}
+.btn-complement-blue:hover {
+  color: blue;
+  background-color: #ffff99;
+}
+
+.btn-red {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: red;
+}
+.btn-red:hover {
+  background-color: #ffb3b3; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-red {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid red;
+}
+.btn-outlined-red:hover {
+  background-color: red;
+}
+
+.btn-complement-red {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: red;
+  color: #99ffff;
+}
+.btn-complement-red:hover {
+  color: red;
+  background-color: #99ffff;
+}
+
+.btn-white {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+}
+.btn-white:hover {
+  background-color: white; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-white {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid white;
+}
+.btn-outlined-white:hover {
+  background-color: white;
+}
+
+.btn-complement-white {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  color: white;
+}
+.btn-complement-white:hover {
+  color: white;
+  background-color: white;
+}
+
+.btn-black {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: black;
+}
+.btn-black:hover {
+  background-color: #595959; /*lighten() is the predefined function in sass/scss. The lighten() function makes the color stored in $value lighter by increasing its brightness. The second parameter, 5, represents the percentage by which the color will be lightened. So, it lightens the color by 5%.*/
+}
+
+.btn-outlined-black {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid black;
+}
+.btn-outlined-black:hover {
+  background-color: black;
+}
+
+.btn-complement-black {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  background-color: black;
+  color: #4d4d4d;
+}
+.btn-complement-black:hover {
+  color: black;
+  background-color: #4d4d4d;
+}
+
+/*In SCSS/SASS, a placeholder is defined using the % symbol, and it allows you to create styles that can be extended into other rules. Placeholders are useful for defining reusable sets of CSS properties that won't be compiled into CSS on their own unless they're extended by another selector.*/
+.navbar, .navbar-black, .navbar-white, .navbar-red, .navbar-blue, .navbar-info, .navbar-error, .navbar-secondary, .navbar-primary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar, .navbar-black, .navbar-white, .navbar-red, .navbar-blue, .navbar-info, .navbar-error, .navbar-secondary, .navbar-primary {
+  padding: 0.75rem 1.5rem;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar .site-title, .navbar-black .site-title, .navbar-white .site-title, .navbar-red .site-title, .navbar-blue .site-title, .navbar-info .site-title, .navbar-error .site-title, .navbar-secondary .site-title, .navbar-primary .site-title {
+  font-size: 1.5rem;
+}
+.navbar .container, .navbar-black .container, .navbar-white .container, .navbar-red .container, .navbar-blue .container, .navbar-info .container, .navbar-error .container, .navbar-secondary .container, .navbar-primary .container {
+  display: flex;
+  justify-content: center;
+}
+.navbar p, .navbar-black p, .navbar-white p, .navbar-red p, .navbar-blue p, .navbar-info p, .navbar-error p, .navbar-secondary p, .navbar-primary p {
+  margin-left: 80px;
+  margin-top: 8px;
+}
+
+.navbar-primary {
+  background-color: greenyellow;
+}
+
+.navbar-secondary {
+  background-color: beige;
+}
+
+.navbar-error {
+  background-color: red;
+}
+
+.navbar-info {
+  background-color: yellow;
+}
+
+.navbar-blue {
+  background-color: blue;
+}
+
+.navbar-red {
+  background-color: red;
+}
+
+.navbar-white {
+  background-color: white;
+}
+
+.navbar-black {
+  background-color: black;
+}
+
+.badge {
+  border-radius: 80px;
+  background-color: beige;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-primary {
+  border-radius: 80px;
+  background-color: greenyellow;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-secondary {
+  border-radius: 80px;
+  background-color: beige;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-error {
+  border-radius: 80px;
+  background-color: red;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-info {
+  border-radius: 80px;
+  background-color: yellow;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-blue {
+  border-radius: 80px;
+  background-color: blue;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-red {
+  border-radius: 80px;
+  background-color: red;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-white {
+  border-radius: 80px;
+  background-color: white;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.badge-black {
+  border-radius: 80px;
+  background-color: black;
+  padding: 0.1875rem 0.1875rem;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+/*
+In the context of SASS/SCSS (or even CSS), utilities refer to small, reusable snippets of code that help apply specific styles quickly and efficiently. These utility classes or functions can simplify the development process by providing pre-defined behaviors or properties that can be easily applied to HTML elements.*/
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.p-4 {
+  padding: 4.5rem;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pl-1 {
+  padding-left: 0.75rem;
+}
+
+.pl-2 {
+  padding-left: 1.5rem;
+}
+
+.pl-3 {
+  padding-left: 3rem;
+}
+
+.pl-4 {
+  padding-left: 22.5rem;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.ml-1 {
+  margin-left: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 1.5rem;
+}
+
+.ml-3 {
+  margin-left: 3rem;
+}
+
+.ml-4 {
+  margin-left: 22.5rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: 0.75rem;
+}
+
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 22.5rem;
+}
